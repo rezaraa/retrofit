@@ -9,7 +9,7 @@ interface azanContract {
     }
     interface Presenter{
         fun showResultButtonclick()
-        fun timedevidetion(time: String):String
+        fun timedevidetion(time: Int):String
         fun onRetrofitResponse(isSucceed: Boolean, prayerTimings: Timings?)
 
     }

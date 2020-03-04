@@ -1,15 +1,14 @@
 package com.rezara.advancecourse2
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.azanshow.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-class azanShow : AppCompatActivity(), azanContract.View{
-    val presenter = azanpresenter(this)
+class Azanshow : AppCompatActivity(), azanContract.View{
+    val presenter = Azanperesenter(this)
     /**
     https://stackoverflow.com/questions/2271131/display-the-current-time-and-date-in-an-android-application
      */
@@ -19,12 +18,12 @@ class azanShow : AppCompatActivity(), azanContract.View{
         return country to city
     }
     override fun showCurrentTime() {
-        val time = Calendar.getInstance()
-        val df = SimpleDateFormat( "HH:mm:ss")
-        val timesepration=presenter.timedevidetion(df.format(time))
+        val instance = Calendar.getInstance()
+        val df = SimpleDateFormat("HH")
+        val timesepration=presenter.timedevidetion(df.format(instance.time).toInt())
         when(timesepration){
-            "day"-> imgtime.setBackgroundResource(R.drawable.night)
-            "night"-> imgtime.setBackgroundResource(R.drawable.sunrise)
+            "day"-> imgtime.setBackgroundResource(R.drawable.sunrise)
+            "night"-> imgtime.setBackgroundResource(R.drawable.night)
 
         }
     }

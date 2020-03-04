@@ -1,6 +1,6 @@
 package com.rezara.advancecourse2
 
-data class azanresponse(
+data class AzanResponse(
     val code: Int,
     val `data`: Data,
     val status: String
